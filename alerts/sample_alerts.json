@@ -1,0 +1,14 @@
+{
+  "redis_miss_alert": {
+    "name": "High Redis Miss Rate",
+    "query": "AppMetrics | where Name == 'RedisMissRate' | summarize avg(Value) by bin(TimeGenerated, 1h) | where avg_Value > 0.8",
+    "threshold": 0.8,
+    "action_group": "billing-alerts"
+  },
+  "cosmos_spike_alert": {
+    "name": "Cosmos DB RU Spike",
+    "query": "AzureMetrics | where MetricName == 'TotalRequestUnits' | summarize max(Total) by bin(TimeGenerated, 1h) | where max_Total > 10000",
+    "threshold": 10000,
+    "action_group": "billing-alerts"
+  }
+}

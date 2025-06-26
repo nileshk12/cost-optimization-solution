@@ -1,0 +1,6 @@
+AppMetrics
+| where AppRoleName == "billing-api"
+| where Name == "RedisMissRate"
+| summarize avg(Value) by bin(TimeGenerated, 1h)
+| where avg_Value > 0.8
+| project TimeGenerated, avg_Value

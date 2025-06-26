@@ -1,0 +1,6 @@
+AzureMetrics
+| where ResourceProvider == "MICROSOFT.DOCUMENTDB"
+| where MetricName == "TotalRequestUnits"
+| summarize max(Total) by bin(TimeGenerated, 1h)
+| where max_Total > 10000
+| project TimeGenerated, max_Total

@@ -1,0 +1,6 @@
+AppTraces
+| where AppRoleName == "billing-api"
+| where Message contains "BlobStorageFallback"
+| summarize count() by bin(TimeGenerated, 1h)
+| where count_ > 10
+| project TimeGenerated, count_
