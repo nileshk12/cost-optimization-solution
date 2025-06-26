@@ -50,3 +50,12 @@ variable "function_app_id" {
   description = "ID of the billing API Function App"
   type        = string
 }
+variable "existing_cosmosdb_name" {
+  description = "Name of the existing Cosmos DB account"
+  type        = string
+}
+
+variable "existing_cosmosdb_resource_group" {
+  description = "Name of the resource group containing the existing Cosmos DB account"
+  type        = string
+}

@@ -20,7 +20,6 @@ resource "azurerm_redis_cache" "billing" {
   capacity            = 1
   family              = "C"
   sku_name            = "Standard"
-  enable_non_ssl_port = false
 }
 
 output "hostname" {

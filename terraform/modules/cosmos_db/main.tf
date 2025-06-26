@@ -60,7 +60,8 @@ resource "azurerm_cosmosdb_sql_container" "records" {
   resource_group_name = var.resource_group_name
   account_name        = var.existing_cosmosdb_name != "" ? data.azurerm_cosmosdb_account.existing[0].name : azurerm_cosmosdb_account.billing[0].name
   database_name       = azurerm_cosmosdb_sql_database.billing.name
-  partition_key_path  = "/id"
+  partition_key_paths = ["/id"]
+  throughput		= 400
 }
 
 output "endpoint" {
