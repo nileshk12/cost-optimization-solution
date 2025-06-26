@@ -16,13 +16,19 @@ output "storage_account_name" {
 
 output "storage_account_access_key" {
   description = "Primary access key for the storage account"
-  value       = azurerm_storage_account.storage.primary_access_key
+  value       = module.blob_storage.primary_access_key
   sensitive   = true
 }
 
 output "redis_hostname" {
   description = "Hostname for the Redis Cache"
   value       = module.redis_cache.hostname
+}
+
+output "redis_key" {
+  description = "Primary access key for the Redis Cache"
+  value       = module.redis_cache.primary_access_key
+  sensitive   = true
 }
 
 output "function_app_id" {
