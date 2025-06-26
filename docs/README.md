@@ -12,15 +12,17 @@ This repository contains a production-ready solution to optimize costs for an Az
 
 
 
-Initialize Terraform:
+**Initialize Terraform**:
 
 cd terraform
+
 terraform init
+
 terraform apply
 
 
 
-Deploy Functions:
+**Deploy Functions**:
 
 
 
@@ -30,7 +32,7 @@ Deploy billing_api.py, archive_writer.py, and rehydration_job.py to the respecti
 
 
 
-Configure Monitoring:
+**Configure Monitoring**:
 
 
 
