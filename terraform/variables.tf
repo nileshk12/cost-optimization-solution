@@ -11,35 +11,20 @@ variable "location" {
   default     = "eastus"
 }
 
-variable "cosmos_db_endpoint" {
-  description = "Endpoint for the Cosmos DB account"
+variable "random_suffix" {
+  description = "Random suffix for resource names"
   type        = string
-  sensitive   = true
+  default     = "123"
 }
 
-variable "cosmos_db_key" {
-  description = "Primary key for the Cosmos DB account"
+variable "existing_cosmosdb_name" {
+  description = "Name of existing Cosmos DB account (optional)"
   type        = string
-  sensitive   = true
+  default     = ""
 }
 
-variable "storage_account" {
-  description = "Name of the Azure storage account"
+variable "existing_cosmosdb_resource_group" {
+  description = "Resource group of existing Cosmos DB account (optional)"
   type        = string
-}
-
-variable "redis_host" {
-  description = "Hostname for the Azure Redis Cache"
-  type        = string
-}
-
-variable "redis_key" {
-  description = "Primary access key for the Azure Redis Cache"
-  type        = string
-  sensitive   = true
-}
-
-variable "function_app_id" {
-  description = "ID of the billing API Function App"
-  type        = string
+  default     = ""
 }
